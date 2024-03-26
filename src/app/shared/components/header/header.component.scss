@@ -1,0 +1,58 @@
+// @import  '../../../scss/variables/variables';
+nav{
+    background: #182132;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 60px;
+    padding: 0 .75rem;
+    .header-company-logo{
+        margin-left: 1rem;
+    }
+    .header-text{
+        font-size: 18px;
+    }
+    .language-selection{
+        background: inherit;
+        outline: none;
+        border-radius: 4px;
+    }
+    .language-selector{
+        margin-left: 20%;
+    }
+    .page-info-icon{
+        cursor: pointer;
+        img{
+            width: 19px;
+            height: 19px;
+        }
+    }
+    .header-tittle{
+        font-size:14px;
+        // font-family:"Lato-Regular";
+        font-weight: bold;
+        color:#fff;
+        margin:0rem 0rem 0rem 1rem;
+    }
+}
+ 
+ 
+.back-arrow {
+    // background: url('./../../../../assets/images/svg/backword-arrow.svg') 0px 0 no-repeat ;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+@media screen and (max-width : 600px) {
+    nav{
+        height: 48px !important;
+    }
+}
+
+.brand-log{
+    width: 40px;
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+}
