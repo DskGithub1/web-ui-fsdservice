@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
+  public bfdlFullData:boolean = false;
+
+  toggle(){
+  this.bfdlFullData = !this.bfdlFullData;
+  }
+
 }

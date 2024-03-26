@@ -1,1 +1,38 @@
-<p>sidebar works!</p>
+<div class="desktop-header">
+    <section class="banner-section">
+        <div class="banner-container">
+            <h2>Home Loan</h2>
+            <div class="row side-content">
+                <div class="col-12 d-none d-md-block mb-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae id amet assumenda voluptas,
+                    <span *ngIf="bfdlFullData">ullam at, quam, quod velit odit totam sit facere!
+                        Sequi eaque quo vel ut ratione voluptatum voluptas! </span>
+                    <span class="read-more-less-txt" (click)="toggle()">{{bfdlFullData ? ' Read less.' : ' Read more...'}}</span>
+                </div>
+                <div class="col-12">
+                   <div class="feature-card">
+                        <h3>Feature</h3>
+                        <div class="feature-card-list">
+                            <div>
+                                <span></span>
+                                <p>Approval in 2 mins</p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <p>30+ Partners</p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <p>Fast online process</p>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="side-desktop-image">
+        <img src="assets/images/png/Group 1410089239.png">
+    </div>
+</div>

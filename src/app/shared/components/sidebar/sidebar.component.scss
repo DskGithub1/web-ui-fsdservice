@@ -1,0 +1,104 @@
+.desktop-header {
+    float: left;
+    position: relative;
+    background-color: #f4f4f4;
+    width: 28%;
+    height: 720px;
+    top: 3.75rem;
+    section {
+        position: relative;
+        padding: 0 1.5rem;
+
+        .banner-container {
+            padding-top: 2.25rem;
+
+            .banner-text {
+                display: flex;
+                align-items: center;
+                font: 34px "lato-heavy";
+                padding-left: 5rem;
+            }
+
+            .side-content {
+                font-size: 13px;
+                font-family: "Lato-Regular";
+                text-align: justify;
+                .feature-card {
+                    padding: 1rem 0.75rem;
+                    border: solid 1px #aaaaaa;
+                    background-color: #fff;
+                    border-radius: 0.625rem;
+
+                    h3 {
+                        // font-family: "Lato";
+                        font-size: 14px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        text-align: left;
+                        color: #111;
+                    }
+                
+                    .feature-card-list {
+                       display: inline-block;
+                    }
+                    span {
+                        background-color: #eabf23;
+                        border-radius: 10px;
+                        display: inline-block;
+                        width: 5px;
+                        min-height: 20px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #111;
+            font-family: 'Lato-Bold';
+        }
+
+        p {
+            font-size: 14px;
+            font-family: 'Lato-Regular';
+            color: #111111;
+            padding: 0 0.75rem;
+            display: inline-block;
+        }
+    }
+
+    // background-image: url("src/assets/images/png/Clip path group.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    .side-desktop-image {
+        position: absolute;
+        bottom: 0;
+        right: 4px;
+    }
+
+    img {
+        display: block;
+        // width: 50%;
+        float: right;
+    }
+}
+// @media screen and (min-width: 768px) {
+//   
+// }
+
+// @media (min-width: 768px ) and (max-width : 992px) {
+//     .desktop-header{
+//         float: left;
+//         position: relative;
+//         background-color: white;
+//         width: 30%;
+//         height: 702px;
+//         margin-right: 1rem;
+//     }
+    
+// }
