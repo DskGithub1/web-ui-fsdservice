@@ -34,28 +34,30 @@
                 <input type="tel" class="input-field" id="mob" pattern="^\d{10}$" formControlName="mobileNumber" maxlength="10" placeholder="" data_target="dob"
                     data_target_prev="" />
                 <label for="mob" class="input-label">Moblie No</label>
-                <!-- <div class="text-danger">
-                    <div>
+                <div class="text-danger">
+                    <div *ngIf="landingForm.controls['mobileNumber']?.touched
+        && landingForm.controls['mobileNumber']?.value == ''">
                         Mobile Number is mandatory
                     </div>
-                    <div>
+                    <div *ngIf="landingForm.controls['mobileNumber'].hasError('pattern')">
                         Please provide a valid mobile number to proceed further
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <div class="col-md-6 col-12 form-group input-field-container">
-                <input type="tel" class="input-field" id="dob" formControlName="dob" data_target=""
+                <input type="tel" class="input-field" id="dob" formControlName="dateOfBirth" data_target=""
                     data_target_prev="mob" 
-                    appFocusNext appScrollToTopOnFocus autocomplete="off"  placeholder=" " maxlength="10" data_target="propertyIdentified" />
+                    appFocusNext appScrollToTopOnFocus autocomplete="off"  placeholder=" " maxlength="10" minlength="10" data_target="propertyIdentified" (change)="checkDob()" />
                 <label for="dob" class="input-label">Date of Birth</label>
                  <div class="col-12 text-danger">
-                  <!-- <div>
+                  <div *ngIf="landingForm.controls['dateOfBirth']?.touched
+                  && landingForm.controls['dateOfBirth']?.value == ''">
                         Date of Birth is mandatory
                   </div>
-                  <div>
-                     Please provide correct date of birth
-                  </div> -->
+                  <div *ngIf="landingForm.controls['dateOfBirth']?.hasError('adult')">
+                    Age must be more than 18
+                  </div>
                 </div>
             </div>
             <div class="consent-container">

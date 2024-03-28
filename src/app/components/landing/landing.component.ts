@@ -27,14 +27,14 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.buildForm();
   }
 
   public buildForm() {
     this.landingForm = this.fb.group({
       mobileNumber: [
         '', Validators.compose([
-          Validators.required, Validators.pattern('^\\d{10}$')]),],
+          Validators.required, Validators.pattern('[6789][0-9]{9}')]),],
       dateOfBirth: ['', {
         validators: [
           Validators.required,
@@ -46,5 +46,26 @@ export class LandingComponent implements OnInit {
   proceedNext() {
     
   }
+
+  checkDob(){
+    let age = this.getAge(this.landingForm.controls['dateOfBirth'].value)
+    if(age<18){
+      this.landingForm.controls['dateOfBirth'].setErrors({'adult': true});
+    }
+    else{
+      this.landingForm.controls['dateOfBirth'].setErrors(null);
+    }
+  }
+
+  getAge(dateString: string) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
 
 }

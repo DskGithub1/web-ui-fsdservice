@@ -6,4 +6,7 @@ export class CommonConstants {
       AddtionalDetails: 'additional-details',
       ThankYou: 'thank-you'
     };
+    public static APIURL = {
+        login: 'http://localhost:8080/application',
+    }
 }
