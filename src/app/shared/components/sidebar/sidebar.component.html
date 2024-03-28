@@ -1,17 +1,22 @@
 <div class="desktop-header">
     <section class="banner-section">
         <div class="banner-container">
-            <h2>Home Loan</h2>
+            <h2>Personal Loan</h2>
             <div class="row side-content">
                 <div class="col-12 d-none d-md-block mb-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae id amet assumenda voluptas,
-                    <span *ngIf="bfdlFullData">ullam at, quam, quod velit odit totam sit facere!
-                        Sequi eaque quo vel ut ratione voluptatum voluptas! </span>
-                    <span class="read-more-less-txt" (click)="toggle()">{{bfdlFullData ? ' Read less.' : ' Read more...'}}</span>
+                    Get the financial support you need, quickly and conveniently. Our streamlined online process ensures
+                    approval in just 2 minutes.
+
+                    <span *ngIf="fullText">
+                        Apply now and experience the ease of obtaining a personal loan with us.
+                        Our user-friendly interface guides you through the process, making it simple and hassle-free.
+                    </span>
+                    <span class="read-more-less-txt" (click)="toggle()">
+                        {{fullText ? ' Read less.' : ' Read more...'}}
+                    </span>
                 </div>
                 <div class="col-12">
-                   <div class="feature-card">
+                    <div class="feature-card">
                         <h3>Feature</h3>
                         <div class="feature-card-list">
                             <div>
@@ -27,12 +32,13 @@
                                 <p>Fast online process</p>
                             </div>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <div class="side-desktop-image">
-        <img src="assets/images/png/Group 1410089239.png">
+        <img
+            src="data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGZpbGw9IiNmZWQ5NDciIGQ9Ik0zNzguNDgsMjU5LjU0QTEyNiwxMjYsMCwwLDEsMjg5LjM3LDQ0LjQxLDEyNiwxMjYsMCwwLDEsNDY3LjU5LDIyMi42MywxMjUuMiwxMjUuMiwwLDAsMSwzNzguNDgsMjU5LjU0WiIvPjxwYXRoIGZpbGw9IiNmZWQ5NDciIGQ9Ik0zNzguNDgsMTVhMTE4LjUxLDExOC41MSwwLDAsMC04My44LDIwMi4zMkExMTguNTIsMTE4LjUyLDAsMCwwLDQ2Mi4yOSw0OS43MSwxMTcuNzgsMTE3Ljc4LDAsMCwwLDM3OC40OCwxNVoiLz48cGF0aCBmaWxsPSIjZmVjYzMwIiBkPSJNNDY3LjU5LDQ0LjQxQTEyNS4yLDEyNS4yLDAsMCwwLDM3OC40OCw3LjVhMTI4LjY2LDEyOC42NiwwLDAsMC0xNSwuODgsMTI2LDEyNiwwLDAsMSw3NC4xMSwyMTQuMjUsMTI1LjEzLDEyNS4xMywwLDAsMS03NC4xMSwzNiwxMjguNjYsMTI4LjY2LDAsMCwwLDE1LC44OUExMjYsMTI2LDAsMCwwLDQ2Ny41OSw0NC40MVoiLz48cGF0aCBmaWxsPSIjZmRkOGFlIiBkPSJNMTE1LjY1LDQ1My42NWw1NS40My0xMi44N2EzOS4xNywzOS4xNywwLDAsMSwxNy4yNy0uMWwxMzMuODcsMjkuNTFhNTcuMDYsNTcuMDYsMCwwLDAsNDUuNTYtOS4zNmwxMjYuODEtOTFhMjMuNzUsMjMuNzUsMCwwLDAsOS44Ny0yMC42OGgwYTIzLjczLDIzLjczLDAsMCwwLTMwLjYxLTIxLjM0bC0xNzcsNTMuODctMTU3LjUtNTEuMjdaIi8+PHBhdGggZmlsbD0iI2ZiYmY3ZCIgZD0iTTE1OC4zNSw0NDAuNjhhMzkuMTcsMzkuMTcsMCwwLDAtMTcuMjcuMWwtMjQsNS41OC0xLjQsNy4yOSw0OS40NC0xMS40OFoiLz48cGF0aCBmaWxsPSIjZmRkOGFlIiBkPSJNMTA0LjY0LDMyNS45M2w3OC44LTIzLjcyYTExMC42NSwxMTAuNjUsMCwwLDEsNzUuOTQsNC40N2w3NS4xNCwzMi42NmEyNSwyNSwwLDAsMSwxNC4zMSwyOWgwYTI1LDI1LDAsMCwxLTI5Ljc4LDE4LjM1bC00Mi42OC05LjYzWiIvPjxwYXRoIGZpbGw9IiNmYmJmN2QiIGQ9Ik0zMTkuMDUsMzcxLjczbC00Mi42OC05LjYzaDBBMTguNzYsMTguNzYsMCwwLDAsMjkxLDM4MC40bDMzLjM3LDcuNTNjMTMuNDUsMywyNC40NS01Ljc2LDI0LjQ1LTE5LjU1aDBhMjQuOTIsMjQuOTIsMCwwLDAtLjQxLTEzLjU2QTI1LDI1LDAsMCwxLDMxOS4wNSwzNzEuNzNaIi8+PHBhdGggZmlsbD0iIzIzNzBiNSIgZD0iTTE1MS4xMSw0NzkuNiw5MSw0OTAsMCw1MDUuOFYzMDkuNTZsNTguMTYtOC43OSw2MC4xNi0xMC40M0ExNywxNywwLDAsMSwxMzgsMzA0LjIzbDI3LDE1NS42NkExNywxNywwLDAsMSwxNTEuMTEsNDc5LjZaIi8+PHBhdGggZmlsbD0iIzBhNTZhNCIgZD0iTTE2My4yNCw0NDkuODFhMTcsMTcsMCwwLDEtMTIuMTMsOC44Mkw5MSw0NjkuMDYsMCw0ODQuODN2MjFMOTEsNDkwbDYwLjE2LTEwLjQzQTE3LDE3LDAsMCwwLDE2NSw0NTkuODlaIi8+PHBhdGggZmlsbD0iIzBhNTZhNCIgZD0iTTE1MS4xMSw0NzkuNiw5MSw0OTAsNTguMTYsMzAwLjc3bDYwLjE2LTEwLjQzQTE3LDE3LDAsMCwxLDEzOCwzMDQuMjNsMjcsMTU1LjY2QTE3LDE3LDAsMCwxLDE1MS4xMSw0NzkuNloiLz48cGF0aCBmaWxsPSIjMTQ0ZTkyIiBkPSJNMTY1LDQ1OS44OSwxMzgsMzA0LjIzYTE3LDE3LDAsMCwwLTE5LjctMTMuODlsLTkuODEsMS43TDEzNSw0NDQuODlhMTcsMTcsMCwwLDEtMTMuODgsMTkuNzFsLTMzLjU2LDUuODJMOTEsNDkwbDYwLjE2LTEwLjQzQTE3LDE3LDAsMCwwLDE2NSw0NTkuODlaIi8+PHBhdGggZmlsbD0iIzNjM2I0MSIgZD0iTTM2NS40MiwxMzAuODlIMzM1YTMuNTUsMy41NSwwLDAsMC0uNDYsMGgtLjI5bC0uNDEuMDctLjMyLjA1Yy0uMTIsMC0uMjQuMDYtLjM2LjA5bC0uMzUuMDktLjM2LjEzLS4zMi4xMmMtLjE1LjA2LS4yOS4xNC0uNDQuMjFsLS4yMS4xMS0uMzcuMjItLjI2LjE2LS4yOC4yMS0uMzEuMjMtLjIyLjIxLS4zMy4zczAsMCwwLDBsLS4xNy4xOS0uMjguMzNjLS4wOC4wOS0uMTQuMTgtLjIxLjI3bC0uMjIuMzJjLS4wNy4xLS4xMy4yMS0uMTkuMzFhMi41OCwyLjU4LDAsMCwwLS4xOC4zMmMtLjA2LjExLS4xMS4yMi0uMTYuMzNhMi4wNywyLjA3LDAsMCwwLS4xNS4zNCwzLjQyLDMuNDIsMCwwLDAtLjEzLjM0LDMuNTgsMy41OCwwLDAsMC0uMTEuMzUsMi4yNSwyLjI1LDAsMCwwLS4wOS4zNWwtLjA5LjM2YzAsLjEzLDAsLjI1LS4wNS4zN3MwLC4yNC0uMDUuMzYsMCwuMjgsMCwuNDIsMCwuMTcsMCwuMjZ2LjA2YzAsLjE0LDAsLjI5LDAsLjQzczAsLjIxLDAsLjMybC4wNi4zNmMwLC4xMiwwLC4yNS4wNi4zN2EyLjY4LDIuNjgsMCwwLDAsLjA3LjI3YzAsLjE0LjA3LjI5LjExLjQ0YTEuOCwxLjgsMCwwLDAsLjA4LjIxYzAsLjE2LjExLjMxLjE3LjQ3bC4xNi4zM2EzLjE4LDMuMTgsMCwwLDAsLjE2LjMyYy4wNi4xMS4xMy4yMi4yLjMzYTIuODIsMi44MiwwLDAsMCwuMTguMjksMi42OSwyLjY5LDAsMCwwLC4yLjI3bC4yNC4zMy4yLjIxYy4xLjEyLjIuMjMuMzEuMzRsMCwwLDY1LjY3LDYzLjU0YTcuNSw3LjUsMCwwLDAsMTAuNDMtMTAuNzhsLTUyLjM1LTUwLjY1aDExLjgzQTQ0LjI4LDQ0LjI4LDAsMCwwLDQwOSwxMDkuMThINDIxLjlhNy41LDcuNSwwLDAsMCwwLTE1SDQwOWE0NCw0NCwwLDAsMC0xMC40Mi0yMS43MUg0MjEuOWE3LjUsNy41LDAsMCwwLDAtMTVIMzM1LjA2YTcuNSw3LjUsMCwwLDAsMCwxNWgzMC4zNmEyOS4yNiwyOS4yNiwwLDAsMSwyOC4yMywyMS43MUgzMzUuMDZhNy41LDcuNSwwLDAsMCwwLDE1aDU4LjU5QTI5LjI3LDI5LjI3LDAsMCwxLDM2NS40MiwxMzAuODlabTE0Ni41MiwyMTcuOGEzMS4yMiwzMS4yMiwwLDAsMC00MC4yOC0yOC4wOUwzNTYuNCwzNTUuNjhhMzIuNjQsMzIuNjQsMCwwLDAtMTguODktMjMuMjlsLTc1LjE1LTMyLjY2QTExOC4yOCwxMTguMjgsMCwwLDAsMTgxLjI4LDI5NWwtMzUuNCwxMC42NS0uNDctMi43M2EyNC41NSwyNC41NSwwLDAsMC0yOC4zOC0yMEw1Ni44OSwyOTMuMzFoMEw2LjIyLDMwMi4xYTcuNSw3LjUsMCwxLDAsMi41NiwxNC43OGw0My4yNy03LjUxTDgyLjI4LDQ4My44NSw2LjIyLDQ5N2E3LjUsNy41LDAsMCwwLDEuMjcsMTQuODksOC4yMiw4LjIyLDAsMCwwLDEuMjktLjExbDE0My42MS0yNC45YTI0LjU3LDI0LjU3LDAsMCwwLDIwLTI4LjM4bC0xLjczLTEwLDIuMTQtLjVhMzIsMzIsMCwwLDEsMTMuOTUtLjA4TDMyMC42LDQ3Ny40NGE2NC42NSw2NC42NSwwLDAsMCw1MS41NS0xMC41OWwxMjYuOC05MUEzMS4wNywzMS4wNywwLDAsMCw1MTEuOTQsMzQ4LjY5Wk0xNDkuODIsNDcyLjE0bC01Mi43Niw5LjE1TDY2LjgzLDMwNi44MWw1Mi43Ny05LjE1YTkuNTQsOS41NCwwLDAsMSwxMSw3Ljc4bDI3LDE1NS42NkE5LjU1LDkuNTUsMCwwLDEsMTQ5LjgyLDQ3Mi4xNFpNNDkwLjIxLDM2My43MWwtMTI2LjgxLDkxYTQ5LjY3LDQ5LjY3LDAsMCwxLTM5LjU3LDguMTNMMTkwLDQzMy4yOGE0Nyw0NywwLDAsMC0yMC41Ny4xMmwtMS4zMS4zMUwxNDguNDYsMzIwLjVsMzcuMTQtMTEuMThhMTAzLjI3LDEwMy4yNywwLDAsMSw3MC43OSw0LjE3bDc1LjE0LDMyLjY2YTE3LjU1LDE3LjU1LDAsMCwxLDEwLjM3LDE4LjUxLDE3LjMxLDE3LjMxLDAsMCwxLS4zNSwxLjgzLDE3LjQ2LDE3LjQ2LDAsMCwxLTIwLjg1LDEyLjg1TDI3OCwzNjkuNzFhNy41LDcuNSwwLDAsMC0zLjMsMTQuNjRMMzE3LjM5LDM5NGEzMi4xMywzMi4xMywwLDAsMCw3LjE4LjgxLDMyLjQ2LDMyLjQ2LDAsMCwwLDMxLjEzLTIzLjIxTDQ3NiwzMzVhMTYuNSwxNi41LDAsMCwxLDQuNzctLjcxLDE2LjI2LDE2LjI2LDAsMCwxLDkuNDEsMjkuNDdaTTM3OC40OCwyNjdBMTMzLjUyLDEzMy41MiwwLDAsMCw0NzIuODksMzksMTMzLjUyLDEzMy41MiwwLDEsMCwyODQuMDcsMjI3Ljg2LDEzMi42MywxMzIuNjMsMCwwLDAsMzc4LjQ4LDI2N1pNMjk0LjY3LDQ5LjY0QTExOC41MiwxMTguNTIsMCwxLDEsNDYyLjI4LDIxNy4yNSwxMTguNTIsMTE4LjUyLDAsMCwxLDI5NC42Nyw0OS42NFoiLz48L3N2Zz4=">
     </div>
 </div>

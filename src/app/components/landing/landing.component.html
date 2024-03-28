@@ -1,14 +1,77 @@
-<!-- <p>landing works!</p>
 
-<button type="button" class="btn btn-primary">Base class</button>
 
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+<app-header
+    [isCompanyLogoVisble]="true"> </app-header>
+<section class="feature-section" *ngIf="isMobileDevice">
+    <h3>Personal Loan</h3>
+    <div class="feature-card-list">
+        <div class="list-1">
+            <span></span>
+            <p>Approval in 2 mins</p>
+        </div>
+        <div class="list-2">
+            <span></span>
+            <p>30+ Partners</p>
+        </div>
+        <div class="list-3">
+            <span></span>
+            <p>Fast online process</p>
+        </div>
+    </div>
+</section>
+<div *ngIf="!isMobileDevice" class="top-banner-desktop  mb-3">
+    <div class="top-banner-desktop-info">
+        <h2>Just provide a few details, and you're ready to go!</h2>
+        <p>Submit correct details to accurately assess your loan eligibility.</p>
+    </div>
+</div>
+<div *ngIf="isMobileDevice" class="landing-heading">Enter a few details & you’re all set!</div>
+<div class="p-0 right-side-desktop-section">
+    <div class="form-container">
+        <form class="row" [formGroup]="landingForm">
+    
+            <div class="col-md-6 col-12 form-group input-field-container">
+                <input type="tel" class="input-field" id="mob" pattern="^\d{10}$" formControlName="mobileNumber" maxlength="10" placeholder="" data_target="dob"
+                    data_target_prev="" />
+                <label for="mob" class="input-label">Moblie No</label>
+                <!-- <div class="text-danger">
+                    <div>
+                        Mobile Number is mandatory
+                    </div>
+                    <div>
+                        Please provide a valid mobile number to proceed further
+                    </div>
+                </div> -->
+            </div>
 
-<button type="button" class="btn btn-link">Link</button> -->
+            <div class="col-md-6 col-12 form-group input-field-container">
+                <input type="tel" class="input-field" id="dob" formControlName="dob" data_target=""
+                    data_target_prev="mob" 
+                    appFocusNext appScrollToTopOnFocus autocomplete="off"  placeholder=" " maxlength="10" data_target="propertyIdentified" />
+                <label for="dob" class="input-label">Date of Birth</label>
+                 <div class="col-12 text-danger">
+                  <!-- <div>
+                        Date of Birth is mandatory
+                  </div>
+                  <div>
+                     Please provide correct date of birth
+                  </div> -->
+                </div>
+            </div>
+            <div class="consent-container">
+                <input checked type="checkbox" id="tncCheck">
+                <label for="tncCheck"></label>
+                <label class="col-xs-12 pb-md-3 label text-justify tncCheck">
+                    I hereby authorize to share my personal details with your business partners for receiving competitive offers
+                </label>
+            </div>
+
+            <div class="proceed-btn col-12 mt-4">
+                <button type="button" id="next" [disabled]="landingForm.invalid" class="btn col-md-5 col-12  proceedNext" (click)="proceedNext()">
+                        PROCEED FOR OTP
+                </button>
+            </div>
+    
+        </form>
+    </div>
+</div>

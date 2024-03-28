@@ -8,7 +8,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 export class HeaderComponent implements OnInit {
   @Input() headerText!: string;
   @Input() isCompanyLogoVisble?: boolean = false;
-  public imageUrl = "assets/images/png/bajaj-logo.png";
+  public imageUrl = "assets/images/png/company logo.png";
   public isMobileDevice:boolean = false;
  
   @HostListener('window:resize', ['$event'])

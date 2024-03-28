@@ -1,0 +1,134 @@
+.form-container {
+    padding: 0 2rem 0 1.25rem;
+
+    .radio-group {
+        justify-content: space-between;
+        gap: 0 1rem;
+        .radio-box{
+            border: 1px solid #aaaaaa;
+        }
+    }
+
+    .select-profession-heading {
+        font-family: 'Lato-Bold';
+        font-size: 16px;
+        text-align: left;
+        color: #111;
+        padding-bottom: 0.625rem;
+    }
+
+    .consent-container {
+        color: #aaaaaa;
+        text-align: justify;
+    }
+
+    .tncCheck {
+        font-size: 12px;
+        font-family: "Lato-Regular";
+        display: block;
+        padding-left: 28px;
+        margin-top: -20px;
+        line-height: 15px;
+    }
+    .proceed-btn{
+        display: flex;
+        justify-content: center;
+        padding: 0.625rem;
+    }
+    .whatsAppConsentlabel{
+        text-align: left;
+        color: #111;
+        padding-bottom: 0.625rem;
+        display: inline-block;
+        font-family: "Lato-Regular";
+    }
+}
+
+.top-banner-desktop {
+    top: 3.75rem;
+    position: relative;
+    padding: 1.25rem 0 0 1.25rem;
+
+    .top-banner-desktop-info {
+        padding: 0.75rem 0 0.75rem 1rem;
+        // background-color: #dee2e6;
+        // background-image: url("./../../../assets/images/png/top_banner_desktop.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 10%;
+        h2 {
+            font-size: 20px;
+            color: #111;
+            font-family: 'Lato-bold';
+        }
+
+        p {
+            font-size: 1rem;
+            color: #111;
+            font-family: 'Lato-medium';
+        }
+    }
+
+}
+
+.landing-heading {
+    top: 3rem;
+    position: relative;
+    padding: 1rem 0 0 1rem;
+    // font-family: Lato;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #111;
+    margin-bottom: 1.25rem;
+}
+
+.feature-section {
+    top: 3rem;
+    position: relative;
+    padding-left: 1rem;
+    // background-image: url("./../../../assets/images/png/top_banner_desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #111;
+        padding-top: 1rem;
+    }
+
+    .feature-card-list {
+        display: flex;
+
+        .list-1,
+        .list-2 {
+            padding-right: 0.25rem;
+        }
+
+        p {
+            font-size: 12px;
+            color: #111111;
+            padding-left: 5px;
+            display: inline-block;
+        }
+
+        span {
+            background-color: #eabf23;
+            border-radius: 10px;
+            display: inline-block;
+            width: 5px;
+            min-height: 20px;
+            vertical-align: middle;
+        }
+    }
+
+}
