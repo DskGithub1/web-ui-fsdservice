@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
   styleUrls: ['./listing.component.scss']
 })
-export class ListingComponent {
-  cardListDisplyData: any[] = [
+export class ListingComponent implements OnInit {
+  public requirementForm!: FormGroup;
+  public minEligibleAmount = 10000;
+  public maxEligibleAmount = 1000000;
+  public minEligibleTenure = 12;
+  public maxEligibleTenure = 72;
+  public cardListDisplyData: any[] = [
     {
       "id": 1,
       "applicationKey": 123456789,
@@ -48,5 +54,20 @@ export class ListingComponent {
       "imageURL": 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIcAAABpCAMAAAAnd8DKAAAAUVBMVEVHcEzXGSDXGiH+/v7XGCDXGSDXGSDXGSDaFR7XGSD99/fYIyrnen7rkZTkaW7toKPhWF3aLjX77OzeSE7yvb/phYj54eHcOT/31tfwrbD0yMnjpBNxAAAACnRSTlMAu///Y4RG6RqySuSl7QAABLRJREFUaN7tm9ty6ygQRXNEEsfcEXf+/0NnN9g5csZ5iDO2NVV0pSwJCVg0DWxS0svLsI/X4+GwPNYOh+Prx8vWPt6WZ9nbhuT9sDzPDu9njLflufY2MF6XZ9tr75Tl+UZdc9wBxxFDZdmDfewgOkaE/NkFx5+Xwy44Di/LPmxyTI7JMTkmx+SYHJNjckyOyfFfcwjnrVQwqb0Tz+EQXoW0cnYyvqamrHg0R5blE2FjJWbxQA5nVvaNrTU/ikNIdIEyIX3xCE/BKNVW5R7CISpjakRI3biFhxEdkbEgHsAhAjtx4Dyrk0+48afKI4VJvjsHeeOTA6ZTjwr5mUAcP/fIjzk033KgOo++4Xa55NiA3odDpG01wg6yiIM99YXsDyRxXw7N/t3csG4HyPAHs/flUJccvdVS/T0/+4PV+3KYCw4fJIaJ9xjCMugLf4QH+sPKaLNbfMaCZ2PU4nH+uIiPMgashSc0Rs0IkxOHvvN4GTNoPHOwAh+hDxq75FjFA+cPcPC4uITpQ37xh7n7fNq2HCaL3Po8nvWWo7h7cyyubThSVGNeN7FsONL91xdIoMA38bGVHmeO9nMJcpMOUlhdydIXDkuJitcbJNltesyblcO+ajFKW6u9pcRb9amv6Yo+5ek2it/odefNpVTmyVh3a2m/2r+IbHVUBqaitPk3G5g97ueEaY0EnQghxItdm1hkCN/7/LSVczV0y/j7DYejcejGmrrh0CW5JXyvsHJLfpyMcCmYWX/F4akcP4qzWkVUHJWXiXFlEzMxBFLDDse+Q8kKbhOLDRDrXSZbxqWWUtsohVIatzU9Xhvli8qaUHUf9KHSKl2DcVc5NOOk5xQO3BVWxJIZH+taXOkerk76HOuH7Ctv69P8WNYUS865LMoaPDs/bxjNM/qcYEWkfEUYukzuGodhmKi1W3Eo+K1EtlrsE4yynK1RcmbgsyKRJHHSZEPBKLCp3jEgWlfeHGcKMiXJSN0blMeFlNRf6HCJkoqqRsJ3caNitxyJ0YOVhdDrwzMVUaFJS8BVnuIHd7GKZKA1agyq1HhyhIcY4UFZvaEqHKmhrA1a5ysVgHy69L0NmslLus4B11nouZXnwjT6WpDoqfBSW8ZPXhlumf4kvIAT9JsF58iPzNFaSwIA4qD1BItu5KObQxdz5Jsh61KB5SscEfmRBRlW7iNLKAjNhZdMVxpU7oqr2KXw2LQYjIxKVZ4Ech5h0rDL0ZRA0RXQsw1NsPQ4t0MxUgkCdi1OKxrf92YepRvqP7TFYfSE2IGogiE5VugfjgCAUxTIiuzuDYTewwR3uaOEgpiXGHCIL3JvARDiRJkKf7So6rXx0tuQSPAbREVXVQjOPpi5ovEMhrrEHvXNLT3eOWJ5PYviMjQ6Ykb2mEK1hoppaER3L4IiLn173IaqC9fmDyGlWzD8M340rkyVVpISNyZaKeFCiXYLa+r495M+nVDCEECyx6tDET0jCvRCY6xtErDDoHyIeYli/fy/5eSYHJNjckyOyTE5JsfkmByT43/HcdjN+8nHXXAcd/P++l7e59/Fi/THl3184PCxo+9fdvM90G6+j0KMPG8WOV5+ufb+9pTv597OzvgHtYOrY1RegQQAAAAASUVORK5CYII='
     }
   ];
+
+  constructor(
+    private fb: FormBuilder
+  ) {}
+
+  ngOnInit(): void {
+      this.buildForm();
+  }
+
+  public buildForm() {
+    this.requirementForm = this.fb.group({
+      loanAmount: ['', [Validators.required, Validators.min(this.minEligibleAmount), Validators.max(this.maxEligibleAmount)]],
+      loanTenure: ['', [Validators.required, Validators.min(this.minEligibleTenure), Validators.max(this.maxEligibleTenure)]],
+    });
+  }
 
 }
