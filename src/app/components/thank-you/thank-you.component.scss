@@ -1,0 +1,45 @@
+.thankyou-container{
+    text-align: center;
+    top: 3.75rem;
+    position: relative;
+    img {
+        margin-top: 60px;
+        margin-bottom: 56px; 
+    }
+    h3{
+        font: 50px "lato-bold";
+        margin-bottom: 36px;
+    }
+    h6{
+        font: 20px "lato-heavy";
+        margin-bottom: 32px;
+    }
+    p{
+        font: 18px "lato-bold";
+        width: 367px;
+        margin: 0px auto 48px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .thankyou-container{
+        img{
+            max-width: 322px;
+            margin-bottom: 48px;
+        }
+        h3{
+            font: 24px "lato-bold";
+            margin-bottom: 24px;
+        }
+        h6{
+            font: 16px "lato-heavy";
+            margin-bottom: 30px;
+        }
+        p{
+            font: 14px "lato-bold";
+            margin-bottom: 0;
+            width: 293px;
+        }
+    }
+}
