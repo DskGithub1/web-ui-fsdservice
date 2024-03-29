@@ -33,6 +33,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
+    console.log('login form', this.landingForm);
   }
 
   public buildForm() {
@@ -45,6 +46,8 @@ export class LandingComponent implements OnInit {
           Validators.required,
           Validators.pattern('^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)[0-9]{4}$')]
       }],
+      tnc: [
+        '', Validators.compose([Validators.requiredTrue])],
     })
   }
 

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonConstants } from 'src/app/shared/constants/comman-constants';
 
 @Component({
   selector: 'app-thank-you',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ThankYouComponent {
 
+  constructor(
+    private router: Router
+  ) { }
+
+  public backToLandingPage(){
+    this.router.navigate([CommonConstants.Routes.Login]);
+  }
 }

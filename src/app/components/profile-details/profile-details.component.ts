@@ -61,6 +61,8 @@ export class ProfileDetailsComponent implements OnInit {
       }],
       address: [
         '', Validators.compose([Validators.required])],
+        tnc: [
+          '', Validators.compose([Validators.requiredTrue])],
     })
   }
 
