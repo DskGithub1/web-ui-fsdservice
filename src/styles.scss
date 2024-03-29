@@ -26,7 +26,7 @@
     position: absolute;
     font-size: 12px;
     top: -7px;
-    right: 23px;
+    left: 23px;
     transition: all 0.2s ease-in-out;
     margin: 0;
     padding: 0 3px;
@@ -50,7 +50,7 @@
     position: absolute;
     font-size: 12px;
     top: -7px;
-    right: 23px;
+    left: 23px;
     transition: all 0.2s ease-in-out;
     margin: 0;
     padding: 0 3px;
@@ -143,10 +143,10 @@ input[type=checkbox] {
         transition: all 0.2s ease-in-out;
     }
 
-    textarea[type=text]:focus {
-        height: 111px;
-        animation: animation .5s;
-    }
+    // textarea[type=text]:focus {
+    //     height: 111px;
+    //     animation: animation .5s;
+    // }
 
     textarea:not(:placeholder-shown) {
         background-color: #fff;
@@ -199,13 +199,13 @@ select:focus-within {
     border: 1px solid #007bff;
 }
 
-input[type=text]:focus,
-input[type=text]:focus-within,
-input[type=email]:focus,
-input[type=tel]:focus {
-    height: 58px;
-    animation: animation .5s;
-}
+// input[type=text]:focus,
+// input[type=text]:focus-within,
+// input[type=email]:focus,
+// input[type=tel]:focus {
+//     height: 58px;
+//     animation: animation .5s;
+// }
 
 select.ng-valid {
     border: 1px solid #aaaaaa !important;
@@ -335,7 +335,7 @@ select::placeholder {
 .input-field:focus+.input-label,
 .select-input-label {
     top: -8px;
-    right: 23px;
+    left: 23px;
     font-family: "Lato-Regular";
     font-size: 12px;
     z-index: 1;
