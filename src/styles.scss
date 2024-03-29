@@ -138,6 +138,21 @@ input[type=checkbox] {
     }
 }
 
+    textarea {
+        min-height: 106px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    textarea[type=text]:focus {
+        height: 111px;
+        animation: animation .5s;
+    }
+
+    textarea:not(:placeholder-shown) {
+        background-color: #fff;
+        border: 1px solid #aaaaaa;
+    }
+
 input[type=checkbox]:checked {
     &+label {
         font-size: 12px;
@@ -174,6 +189,7 @@ input[type=checkbox]:checked {
 }
 
 input:focus,
+textarea:focus,
 select:focus,
 .input:focus-within,
 select:focus-within {

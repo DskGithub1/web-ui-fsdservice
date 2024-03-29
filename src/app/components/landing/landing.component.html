@@ -48,7 +48,7 @@
             <div class="col-md-6 col-12 form-group input-field-container">
                 <input type="tel" class="input-field" id="dob" formControlName="dateOfBirth" data_target=""
                     data_target_prev="mob" 
-                    appFocusNext appScrollToTopOnFocus autocomplete="off"  placeholder=" " maxlength="10" minlength="10" data_target="propertyIdentified" (change)="checkDob()" />
+                    appFocusNext appScrollToTopOnFocus autocomplete="off"  placeholder=" " maxlength="10" data_target="propertyIdentified" (change)="checkDob()" />
                 <label for="dob" class="input-label">Date of Birth</label>
                  <div class="col-12 text-danger">
                   <div *ngIf="landingForm.controls['dateOfBirth']?.touched
@@ -70,7 +70,7 @@
 
             <div class="proceed-btn col-12 mt-4">
                 <button type="button" id="next" [disabled]="landingForm.invalid" class="btn col-md-5 col-12  proceedNext" (click)="proceedNext()">
-                        PROCEED FOR OTP
+                        PROCEED
                 </button>
             </div>
     

@@ -1,1 +1,114 @@
-<p>profile-details works!</p>
+
+
+<app-header
+[isCompanyLogoVisble]="true"> </app-header>
+<section class="feature-section" *ngIf="isMobileDevice">
+<h3>Personal Loan</h3>
+<div class="feature-card-list">
+    <div class="list-1">
+        <span></span>
+        <p>Approval in 2 mins</p>
+    </div>
+    <div class="list-2">
+        <span></span>
+        <p>30+ Partners</p>
+    </div>
+    <div class="list-3">
+        <span></span>
+        <p>Fast online process</p>
+    </div>
+</div>
+</section>
+<div *ngIf="!isMobileDevice" class="top-banner-desktop  mb-3">
+<div class="top-banner-desktop-info">
+    <h2>Just provide a few details, and you're ready to go!</h2>
+    <p>Submit correct details to accurately assess your loan eligibility.</p>
+</div>
+</div>
+<div *ngIf="isMobileDevice" class="landing-heading">Enter a few details & you’re all set!</div>
+<div class="p-0 right-side-desktop-section">
+<div class="form-container">
+    <form class="row" [formGroup]="profileForm">
+
+        <div class="col-md-6 col-12 form-group input-field-container">
+            <input type="text" class="input-field" id="name" formControlName="fullName" placeholder=""
+                data_target_prev="" />
+            <label for="mob" class="input-label">Full Name</label>
+            <div class="text-danger">
+                <div *ngIf="profileForm.controls['fullName']?.touched
+                    && profileForm.controls['fullName']?.value == ''">
+                    Full Name is mandatory
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12 form-group input-field-container">
+            <input type="text" class="input-field" id="name" formControlName="pan" placeholder="" style="text-transform:uppercase"
+                data_target_prev="" />
+            <label for="mob" class="input-label">Pan Number</label>
+            <div class="text-danger">
+                <div *ngIf="profileForm.controls['pan']?.touched
+                    && profileForm.controls['pan']?.value == ''">
+                    Pan Number is mandatory
+                </div>
+                <div *ngIf="profileForm.controls['pan'].hasError('pattern')">
+                    Please provide a valid pan number
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12 form-group input-field-container">
+            <input type="number" class="input-field" id="sal" formControlName="salary" placeholder=""
+                data_target_prev="" />
+            <label for="mob" class="input-label">Salary</label>
+            <div class="text-danger">
+                <div *ngIf="profileForm.controls['salary']?.touched
+                    && profileForm.controls['salary']?.value == ''">
+                    Salary is mandatory
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12 form-group input-field-container">
+            <input type="text" class="input-field" id="name" formControlName="email" placeholder=""
+                data_target_prev="" />
+            <label for="mob" class="input-label">Personal Email</label>
+            <div class="text-danger">
+                <div *ngIf="profileForm.controls['email']?.touched
+                    && profileForm.controls['email']?.value == ''">
+                    Email is mandatory
+                </div>
+                <div *ngIf="profileForm.controls['email'].hasError('pattern')">
+                    Please provide a valid email number
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12 form-group input-field-container">
+            <textarea type="text" class="input-field" id="name" formControlName="address" placeholder=""
+                data_target_prev=""></textarea>
+            <label for="mob" class="input-label">Address</label>
+            <div class="text-danger">
+                <div *ngIf="profileForm.controls['address']?.touched
+                    && profileForm.controls['address']?.value == ''">
+                    Address is mandatory
+                </div>
+            </div>
+        </div>
+        <div class="consent-container">
+            <input checked type="checkbox" id="tncCheck">
+            <label for="tncCheck"></label>
+            <label class="col-xs-12 pb-md-3 label text-justify tncCheck">
+                I hereby authorize to share my personal details with your business partners for receiving competitive offers
+            </label>
+        </div>
+
+        <div class="proceed-btn col-12 mt-4">
+            <button type="button" id="next" [disabled]="profileForm.invalid" class="btn col-md-5 col-12  proceedNext" (click)="proceedNext()">
+                    PROCEED
+            </button>
+        </div>
+
+    </form>
+</div>
+</div>

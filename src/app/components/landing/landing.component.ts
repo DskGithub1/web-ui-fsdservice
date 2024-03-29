@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonConstants } from 'src/app/shared/constants/comman-constants';
+import { LandingService } from './landing.service';
 
 @Component({
   selector: 'app-landing',
@@ -12,7 +15,9 @@ export class LandingComponent implements OnInit {
   public isMobileDevice!:boolean;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private landingService: LandingService,
+    private router: Router
   ) { }
 
   @HostListener('window:resize', ['$event'])
@@ -34,7 +39,7 @@ export class LandingComponent implements OnInit {
     this.landingForm = this.fb.group({
       mobileNumber: [
         '', Validators.compose([
-          Validators.required, Validators.pattern('[6789][0-9]{9}')]),],
+          Validators.required, Validators.pattern('[6789][0-9]{9}')])],
       dateOfBirth: ['', {
         validators: [
           Validators.required,
@@ -44,7 +49,17 @@ export class LandingComponent implements OnInit {
   }
 
   proceedNext() {
-    
+    const payload = {
+      mobileNumber: this.landingForm.controls['mobileNumber'].value,
+      dateOfBirth: this.landingForm.controls['dateOfBirth'].value
+    }
+    this.landingService.loginUser(payload).subscribe({
+      next: (res: any) => {
+        console.log('res', res);
+        sessionStorage.setItem('applicationKey', res.applicationKey);
+        this.router.navigate([CommonConstants.Routes.ProfileDetails]);
+      }
+    })
   }
 
   checkDob(){

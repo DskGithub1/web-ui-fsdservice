@@ -8,5 +8,7 @@ export class CommonConstants {
     };
     public static APIURL = {
         login: 'http://localhost:8080/application',
+        profileGet: 'http://localhost:8080/personal-info/{applicationid}',
+        profilePost: 'http://localhost:8080/personal-info',
     }
 }
