@@ -1,1 +1,78 @@
-<p>listing works!</p>
+<app-header [isCompanyLogoVisble]="true"> </app-header>
+
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+
+<!-- <ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template> -->
+
+<div class="top-banner-desktop  mb-3">
+    <div class="top-banner-desktop-info d-flex ">
+        <ng-container>
+            <div>
+                <h2 style="font-size: 20px;"> <span style="color: #25c167;">Congratulations!</span> You are eligible for</h2>
+                <p>Maximum Loan Offer : ₹ 10,00,000 & Tenure : 72 Months</p>
+            </div>
+        </ng-container>
+
+        <div class="btn-edit">
+            <button type="button" class="btn btn-primary">EDIT
+                <img src="assets/images/png/ pencil_icon.png" alt="Edit_icon">
+            </button>
+        </div>
+    </div>
+</div>
+<div class="p-0 right-side-desktop-section">
+    <div class="form-container">
+
+
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <ng-container *ngIf="cardListDisplyData.length">
+                    <ng-container *ngFor="let card of cardListDisplyData">
+
+                        <div class="col">
+                            <div class="card custom-card"  [ngStyle]="{'background-color': card.bgColor}">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-2">
+                                            <img [src]="card.imageURL" alt="Company Logo"
+                                            class="img-fluid custom-logo">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="card-title mb-1">{{card.bankName}}</h5>
+                                            <p class="card-text text-muted mb-1">Loan Amount: {{card.eligibleAmount}}
+                                            </p>
+                                            <p class="card-text text-muted">ROI: {{card.interestRate}} %</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="badge bg-success rounded-pill">Pre-approved</span>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-9">
+                                            <button type="button" class="btn btn-primary btn-sm me-2">View
+                                                Details</button>
+                                            <button type="button" class="btn btn-success btn-sm">Accept Offer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-container>
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
+</div>
