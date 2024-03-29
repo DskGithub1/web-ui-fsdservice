@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonConstants } from 'src/app/shared/constants/comman-constants';
 import { ListingService } from './listing.service';
 
 @Component({
@@ -60,7 +62,8 @@ export class ListingComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private listingService: ListingService
+    private listingService: ListingService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -83,6 +86,10 @@ export class ListingComponent implements OnInit {
         this.cardListDisplyData = res;
       }
     });
+  }
+
+  public proceedNext(){
+    this.router.navigate([CommonConstants.Routes.ThankYou]);
   }
 
 }
