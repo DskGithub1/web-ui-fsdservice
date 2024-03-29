@@ -270,23 +270,28 @@
 
 /* Custom button styles */
 .btn-primary {
-    background-color: #598bff; /* coral */
-    border-color: #598bff; /* coral */
+    background-color: #598bff;
+    border-color: #598bff;
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
 }
 
 .btn-primary:hover {
-    background-color: #598bff; /* darker coral */
-    border-color: #598bff; /* darker coral */
+    background-color: #598bff;
+    border-color: #598bff;
 }
 
 .btn-success {
-    background-color: #4bc0c0; /* turquoise */
-    border-color: #4bc0c0; /* turquoise */
+    background-color: #4bc0c0;
+    border-color: #4bc0c0;
 }
 
 .btn-success:hover {
-    background-color: #38a5a5; /* darker turquoise */
-    border-color: #38a5a5; /* darker turquoise */
+    background-color: #38a5a5;
+    border-color: #38a5a5;
 }
 
 .badge {
